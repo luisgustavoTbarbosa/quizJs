@@ -11,6 +11,13 @@
   padding: 1.5rem 0;
 }
 
+@media(min-width: 591px) {
+  .sectionQuestions {
+    width: 50%;
+    margin: 2rem auto 0;
+  }
+}
+
 .sectionQuestions .divPergunta {
   font-size: 1.5rem;
   margin-bottom: 1rem;

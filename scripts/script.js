@@ -78,8 +78,6 @@ const quiz = {
     div.appendChild(label)
 
     divRespostas.appendChild(div)
-    // divRespostas.appendChild(inputRadio)
-    // divRespostas.appendChild(label)
   },
   mostrarQuest() {
     const divPergunta = document.querySelector(".divPergunta")
@@ -92,6 +90,7 @@ const quiz = {
         quiz.prepareResp(res)
       })
       quiz.toogleClassSelecionado()
+      new Audio('../assets/vento.mp3').play();
     } else {
       const divRespostas = document.querySelector(".divRespostas")
       const img = document.querySelector("img")
@@ -103,6 +102,7 @@ const quiz = {
       buttonIniciar.innerText = "Tentar novamente"
       buttonPular.setAttribute("disabled", "")
       buttonCancelar.setAttribute("disabled", "")
+      new Audio('../assets/notification.mp3').play();
     }
   }
 }
@@ -115,7 +115,14 @@ buttonIniciar.addEventListener('click', () => {
 })
 
 const buttonEnviarRes = document.querySelector('.buttonEnviarRes')
-buttonEnviarRes.addEventListener('click', quiz.nextQuest)
+buttonEnviarRes.addEventListener('click', () => {
+  const ifSelectedRadio = document.querySelectorAll('input.clicado')
+  if(!ifSelectedRadio.length) {
+    console.log('Selecione uma opção')
+  }else {
+    quiz.nextQuest()
+  }
+})
 
 const buttonPular = document.querySelector('.buttonPular')
 buttonPular.addEventListener('click', quiz.skip)
