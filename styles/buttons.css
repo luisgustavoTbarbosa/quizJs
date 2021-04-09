@@ -1,0 +1,48 @@
+:root {
+  --button-inciar: #2f80ed;
+  --button-text-white: #fff;
+  --button-enviarRes: #4CD62B;
+  --button-pause: #F2C94C;
+  --button-cancel: #EB5757;
+}
+
+.buttonIniciar {
+  background: var(--button-inciar);
+  color: var(--button-text-white);
+
+  width: 18rem;
+  height: 3rem;
+  
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-radius: 4px;
+
+  margin-top: 5rem;
+}
+
+.buttonEnviarRes,
+.buttonPular,
+.buttonCancelar {
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.buttonEnviarRes {
+  background: var(--button-enviarRes);
+  color: var(--button-text-white);
+  margin-right: .5rem;
+}
+
+.buttonPular {
+  background: var(--button-pause);
+  color: var(--button-text-white);
+}
+
+.buttonCancelar {
+  background: var(--button-cancel);
+  color: var(--button-text-white);
+}
