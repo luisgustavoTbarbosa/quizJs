@@ -81,8 +81,11 @@ const quiz = {
   },
   mostrarQuest() {
     const divPergunta = document.querySelector(".divPergunta")
+    const divRespostas = document.querySelector(".divRespostas")
     if(quiz.countQuests <= data.length-1) {
+      divRespostas.innerText = ""
       buttonIniciar.setAttribute("disabled", "")
+      buttonEnviarRes.removeAttribute("disabled", "")
       buttonPular.removeAttribute("disabled", "")
       buttonCancelar.removeAttribute("disabled", "")
       divPergunta.innerText = data[quiz.countQuests].pergunta
@@ -100,9 +103,12 @@ const quiz = {
       divPergunta.innerText = "Fim!"
       quiz.countQuests = 0
       buttonIniciar.innerText = "Tentar novamente"
+      buttonEnviarRes.setAttribute("disabled", "")
       buttonPular.setAttribute("disabled", "")
       buttonCancelar.setAttribute("disabled", "")
       new Audio('../assets/notification.mp3').play();
+      quiz.acertos = 0
+      quiz.erros = 0
     }
   }
 }
