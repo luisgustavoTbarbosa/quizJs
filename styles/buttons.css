@@ -40,6 +40,7 @@
 .buttonPular {
   background: var(--button-pause);
   color: var(--button-text-white);
+  margin-right: .5rem;
 }
 
 .buttonCancelar {
